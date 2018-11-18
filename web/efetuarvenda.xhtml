@@ -17,7 +17,7 @@
                 </p:selectOneMenu>
                 <p:outputLabel style="font-family: monospace" value="Produto:"/>
                 <p:selectOneMenu style="font-family: monospace" value="#{vendaBean.venda.produto}">
-                    <f:selectItems var="p" value="#{produtoBean.produtos}" itemLabel="#{p.descricao}" itemValue="#{p.idProduto}"/>
+                    <f:selectItems var="p" value="#{produtoBean.produtos}" itemLabel="#{p.descricao}" itemValue="#{p.idproduto}"/>
                 </p:selectOneMenu>
                 <p:outputLabel style="font-family: monospace" value="Quantidade:"/>
                 <p:inputText style="font-family: monospace" value="#{vendaBean.venda.quantidade}"/>

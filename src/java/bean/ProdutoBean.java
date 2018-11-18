@@ -22,10 +22,10 @@ public class ProdutoBean {
 
      // métodos de manipulção com a entidade
     public String inserir(){
-        if(produto.getIdProduto()== null || produto.getIdProduto()==0){
+        if(produto.getIdproduto()== null || produto.getIdproduto()==0){
             dao.salvar(produto);
         }
-        else if(produto.getIdProduto()!=null || produto.getIdProduto()>0){
+        else if(produto.getIdproduto()!=null || produto.getIdproduto()>0){
             dao.alterar(produto);
         }
         produtos = dao.listar(produto);

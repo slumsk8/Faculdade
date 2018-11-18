@@ -27,11 +27,11 @@ public class Produto {
     @Column(name = "valor")
     private Double valor;
 
-    public Long getIdProduto() {
+    public Long getIdproduto() {
         return idproduto;
     }
 
-    public void setIdProduto(Long idproduto) {
+    public void setIdproduto(Long idproduto) {
         this.idproduto = idproduto;
     }
 

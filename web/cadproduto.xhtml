@@ -21,7 +21,7 @@
         </h:form>
         
         <p:dataTable editingRow="true" style="text-align: center; font-family: monospace; margin: 0 auto; width: 750px" value="#{produtoBean.produtos}" var="produto" emptyMessage="Tabela Vazia!">
-            <p:column headerText="ID" style="font-family: monospace;">#{produto.id}</p:column>
+            <p:column headerText="ID" style="font-family: monospace;">#{produto.idproduto}</p:column>
             <p:column headerText="Descrição" style="font-family: monospace;">#{produto.descricao}</p:column>
             <p:column headerText="V.Unidade" style="font-family: monospace;">#{produto.valor}</p:column>
             <p:column headerText="Estoque" style="font-family: monospace;">#{produto.estoque}</p:column>
