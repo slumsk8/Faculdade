@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Cadastro de Clientes</title>
+    </h:head>
+    <h:body style="background-color: black">
+        <h1 style="text-align: center; color: white; font-family: monospace; font-size: 35px">Cadastro de Cliente</h1><br/>
+        <h:form style="text-align: center">
+            <p:panelGrid columns="2" style="margin: 0 auto; background: transparent">
+                <p:outputLabel style="font-family: monospace" value="Nome:"/><p:inputText style="font-family: monospace" value="#{clienteBean.cliente.nome}"/>
+                <p:outputLabel style="font-family: monospace" value="Email:"/><p:inputText style="font-family: monospace" value="#{clienteBean.cliente.email}"/>
+                <p:outputLabel style="font-family: monospace" value="CPF:"/><p:inputText style="font-family: monospace" value="#{clienteBean.cliente.cpf}"/>
+            </p:panelGrid><br/>
+            <p:panel style="margin: 0 auto; background-color: black; border: none">
+                <p:commandButton style="font-family: monospace" value="Inserir" action="#{clienteBean.inserir()}"/>&nbsp;
+                <p:commandButton style="font-family: monospace" value="Voltar" action="index.xhtml?faces-redirect=true"/>
+            </p:panel><br/>
+        </h:form>
+            
+            <p:dataTable editingRow="true" style="text-align: center; font-family: monospace; margin: 0 auto; width: 750px" value="#{clienteBean.clientes}" var="cliente" emptyMessage="Tabela Vazia!">
+                <p:column headerText="Nome" style="font-family: monospace;">#{cliente.nome}</p:column>
+                <p:column headerText="Sobrenome" style="font-family: monospace;">#{cliente.email}</p:column>
+                <p:column headerText="CPF" style="font-family: monospace;">#{cliente.cpf}</p:column>
+                <p:column headerText="Ações" style="font-family: monospace;">
+                    <h:form>
+                        <h:commandLink style="font-family: monospace;" value="Alterar" action="#{clienteBean.prepararAlteracao(cliente)}"/>&nbsp;
+                        <h:commandLink style="font-family: monospace;" value="Remover" action="#{clienteBean.remover(cliente)}"/>
+                    </h:form>
+                </p:column>
+            </p:dataTable>
+    </h:body>
+</html>
+
