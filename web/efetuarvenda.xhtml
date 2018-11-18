@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Efetuar Venda</title>
+    </h:head>
+    <h:body style="background-color: black">
+        <h1 style="text-align: center; color: white; font-family: monospace; font-size: 35px">Venda</h1><br/>
+        <h:form style="text-align: center">
+            <p:panelGrid columns="2" style="margin: 0 auto; background: transparent">
+                <p:outputLabel style="font-family: monospace" value="Cliente:"/>
+                <p:selectOneMenu id="Cliente" style="font-family: monospace" value="#{vendaBean.venda.cliente}">
+                    <f:selectItems var="c" value="#{clienteBean.clientes}" itemLabel="#{c.nome}" itemValue="#{c.idcliente}"/>
+                </p:selectOneMenu>
+                <p:outputLabel style="font-family: monospace" value="Produto:"/>
+                <p:selectOneMenu style="font-family: monospace" value="#{vendaBean.venda.produto}">
+                    <f:selectItems var="p" value="#{produtoBean.produtos}" itemLabel="#{p.descricao}" itemValue="#{p.idProduto}"/>
+                </p:selectOneMenu>
+                <p:outputLabel style="font-family: monospace" value="Quantidade:"/>
+                <p:inputText style="font-family: monospace" value="#{vendaBean.venda.quantidade}"/>
+                <p:outputLabel style="font-family: monospace" value="Valor Total:"/>
+                <p:inputText style="font-family: monospace" value="#{vendaBean.valorTotal}"/>
+            </p:panelGrid><br/>
+            <p:panel style="margin: 0 auto; background-color: black; border: none">
+                <p:commandButton style="font-family: monospace" value="Inserir" action="#{vendaBean.inserir()}"/>&nbsp;
+                <p:commandButton style="font-family: monospace" value="Voltar" action="index.xhtml?faces-redirect=true"/>
+            </p:panel><br/>
+        </h:form>
+            
+            <p:dataTable value="#{vendaBean.vendas}" var="v" style="text-align: center; font-family: monospace; font-size: 15px; width: 750px; margin: 0 auto" emptyMessage="Tabela Vazia!">
+                <p:column headerText="Cliente">#{v.cliente.nome}</p:column>
+                <p:column headerText="Produto">#{v.produto.descricao}</p:column>
+                <p:column headerText="Quantidade">#{v.quantidade}</p:column>
+                <p:column headerText="Valor Unitário">#{v.produto.valor}</p:column>
+                <p:column headerText="Valor Total">#{vendaBean.valorTotal()}</p:column>
+                <p:column headerText="Ações">
+                    <p:commandLink value="Alterar"/>&nbsp;
+                    <p:commandLink value="Remover"/>
+                </p:column> 
+            </p:dataTable>
+    </h:body>
+</html>
+
