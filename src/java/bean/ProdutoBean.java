@@ -6,9 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 
 @ManagedBean
+@ViewScoped
 public class ProdutoBean {
     private GenericDao<Produto> dao = new GenericDao<>();
     private Produto produto = new Produto();

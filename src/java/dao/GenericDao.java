@@ -37,12 +37,7 @@ public class GenericDao<Entidade>{
         List<Entidade> mostrar = sessao.getNamedQuery("" + e.getClass().getSimpleName() + ".findAll").list();
         return mostrar;
     }
-    
-    public List<Entidade> listarPorNome(Entidade e){
-        sessao = HibernateUtil.getSessionFactory().openSession();
-        List<Entidade> listarnomes = sessao.getNamedQuery("" + e.getClass().getSimpleName() + ".findName").list();
-        return listarnomes;
-    }
+ 
     
     public Session getSessao() {
         return sessao;

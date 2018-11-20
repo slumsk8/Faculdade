@@ -12,6 +12,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "cliente")
 @NamedQuery(name = "Cliente.findAll", query = "SELECT c FROM Cliente c ORDER BY c.nome")
+
+
+
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

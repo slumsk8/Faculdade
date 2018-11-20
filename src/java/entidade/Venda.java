@@ -19,7 +19,12 @@ public class Venda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idvenda")
     private Long idvenda;
+    
+    @Column(name = "quantidade")
     private Integer quantidade;
+    
+    @Column(name = "valortotal")
+    private Float valortotal;
     
     /* Geramos as FK instanciando a classe Cliente e Produto.
     Um cliente pode fazer várias vendas, assim como um venda contém muitos produtos 
@@ -33,6 +38,7 @@ public class Venda {
     @JoinColumn(name = "fk_id_produto")
     private Produto produto;
 
+        
     public Long getIdvenda() {
         return idvenda;
     }
@@ -64,6 +70,13 @@ public class Venda {
     public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
     }
-    
+
+    public Float getValortotal() {
+        return valortotal;
+    }
+
+    public void setValortotal(Float valortotal) {
+        this.valortotal = valortotal;
+    }
     
 }

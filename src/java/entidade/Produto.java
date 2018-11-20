@@ -25,7 +25,7 @@ public class Produto {
     private Integer estoque;
     
     @Column(name = "valor")
-    private Double valor;
+    private Float valor;
 
     public Long getIdproduto() {
         return idproduto;
@@ -51,11 +51,11 @@ public class Produto {
         this.estoque = estoque;
     }
 
-    public Double getValor() {
+    public Float getValor() {
         return valor;
     }
 
-    public void setValor(Double valor) {
+    public void setValor(Float valor) {
         this.valor = valor;
     }
 

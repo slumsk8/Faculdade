@@ -20,9 +20,9 @@
             </p:panel><br/>
         </h:form>
             
-            <p:dataTable editingRow="true" style="text-align: center; font-family: monospace; margin: 0 auto; width: 750px" value="#{clienteBean.clientes}" var="cliente" emptyMessage="Tabela Vazia!">
+            <p:dataTable editingRow="true" style="text-align: center; font-family: monospace; margin: 0 auto; width: 900px" value="#{clienteBean.clientes}" var="cliente" emptyMessage="Tabela Vazia!">
                 <p:column headerText="Nome" style="font-family: monospace;">#{cliente.nome}</p:column>
-                <p:column headerText="Sobrenome" style="font-family: monospace;">#{cliente.email}</p:column>
+                <p:column headerText="Email" style="font-family: monospace;">#{cliente.email}</p:column>
                 <p:column headerText="CPF" style="font-family: monospace;">#{cliente.cpf}</p:column>
                 <p:column headerText="Ações" style="font-family: monospace;">
                     <h:form>

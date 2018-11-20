@@ -6,15 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 
 @ManagedBean
+@ViewScoped
 public class ClienteBean {
     private GenericDao<Cliente> dao = new GenericDao<>();
     private Cliente cliente = new Cliente();
     private List<Cliente> clientes = new ArrayList<>();
 
     @PostConstruct
+    
     public void init(){
         clientes = dao.listar(cliente);
         cliente = new Cliente();
