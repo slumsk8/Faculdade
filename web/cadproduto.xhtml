@@ -11,8 +11,6 @@
         <h:form style="text-align: center">
             <p:panelGrid columns="2" style="margin: 0 auto; background: transparent">
                 <p:outputLabel style="font-family: monospace" value="Descrição:"/><p:inputText style="font-family: monospace" value="#{produtoBean.produto.descricao}"/>
-                <p:outputLabel style="font-family: monospace" value="Estoque:"/><p:inputText style="font-family: monospace" value="#{produtoBean.produto.estoque}"/>
-                <p:outputLabel style="font-family: monospace" value="Valor Unitário:"/><p:inputText style="font-family: monospace" value="#{produtoBean.produto.valor}"/>
             </p:panelGrid><br/>
             <p:panel style="margin: 0 auto; background-color: black; border: none">
                 <p:commandButton style="font-family: monospace" value="Inserir" action="#{produtoBean.inserir()}"/>&nbsp;
@@ -23,8 +21,6 @@
         <p:dataTable editingRow="true" style="text-align: center; font-family: monospace; margin: 0 auto; width: 900px" value="#{produtoBean.produtos}" var="produto" emptyMessage="Tabela Vazia!">
             <p:column headerText="ID" style="font-family: monospace;">#{produto.idproduto}</p:column>
             <p:column headerText="Descrição" style="font-family: monospace;">#{produto.descricao}</p:column>
-            <p:column headerText="V.Unidade" style="font-family: monospace;">#{produto.valor}</p:column>
-            <p:column headerText="Estoque" style="font-family: monospace;">#{produto.estoque}</p:column>
             <p:column headerText="Ações" style="font-family: monospace;">
                 <h:form>
                     <h:commandLink style="font-family: monospace;" value="Alterar" action="#{produtoBean.prepararAlteracao(produto)}"/>&nbsp;

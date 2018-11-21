@@ -20,12 +20,6 @@ public class Venda {
     @Column(name = "idvenda")
     private Long idvenda;
     
-    @Column(name = "quantidade")
-    private Integer quantidade;
-    
-    @Column(name = "valortotal")
-    private Float valortotal;
-    
     /* Geramos as FK instanciando a classe Cliente e Produto.
     Um cliente pode fazer várias vendas, assim como um venda contém muitos produtos 
     JoinColumn criará a coluna FK na tabela venda */
@@ -63,20 +57,5 @@ public class Venda {
         this.produto = produto;
     }
     
-    public Integer getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(Integer quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public Float getValortotal() {
-        return valortotal;
-    }
-
-    public void setValortotal(Float valortotal) {
-        this.valortotal = valortotal;
-    }
     
 }

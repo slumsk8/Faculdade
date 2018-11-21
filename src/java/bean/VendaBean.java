@@ -25,6 +25,7 @@ public class VendaBean {
     private List<Cliente> clientes = new ArrayList<>();
     private List<Produto> produtos = new ArrayList<>();
     private List<Venda> vendas = new ArrayList<>();
+    private Float vt;
     
     @PostConstruct
     public void init(){
@@ -119,6 +120,14 @@ public class VendaBean {
 
     public void setVendas(List<Venda> vendas) {
         this.vendas = vendas;
+    }
+
+    public Float getVt() {
+        return vt;
+    }
+
+    public void setVt(Float vt) {
+        this.vt = vt;
     }
 
 }

@@ -19,10 +19,6 @@
                 <p:selectOneMenu style="font-family: monospace" value="#{vendaBean.venda.produto.idproduto}" >
                     <f:selectItems var="p" value="#{vendaBean.produtos}" itemLabel="#{p.descricao}" itemValue="#{p.idproduto}"/>
                 </p:selectOneMenu>
-                <p:outputLabel style="font-family: monospace" value="Quantidade:"/>
-                <p:inputText style="font-family: monospace" value="#{vendaBean.venda.quantidade}"/>
-                <p:outputLabel style="font-family: monospace" value="Valor Total:"/>
-                <p:inputText style="font-family: monospace" value="#{vendaBean.venda.valortotal}"/>
             </p:panelGrid><br/>
             <p:panel style="margin: 0 auto; background-color: black; border: none">
                 <p:commandButton style="font-family: monospace" value="Inserir" action="#{vendaBean.inserirVenda}" />&nbsp;
@@ -33,9 +29,6 @@
             <p:dataTable  var="v" value="#{vendaBean.vendas}" style="text-align: center; font-family: monospace; font-size: 15px; width: 750px; margin: 0 auto" emptyMessage="Tabela Vazia!">
                 <p:column headerText="Cliente">#{v.cliente.nome}</p:column>
                 <p:column headerText="Produto">#{v.produto.descricao}</p:column>
-                <p:column headerText="Quantidade">#{v.quantidade}</p:column>
-                <p:column headerText="Valor Unitário">#{v.produto.valor}</p:column>
-                <p:column headerText="Valor Total">#{v.valortotal}</p:column>
                 <p:column headerText="Ações">
                     <p:commandLink value="Alterar"/>&nbsp;
                     <p:commandLink value="Remover"/>
